@@ -7,8 +7,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         
         System.out.println(1);
-        Pattern validEmail = Pattern.compile("[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}");
-        Matcher emailMatcher = validEmail.matcher("test@example.com");
+        Pattern validEmail = Pattern.compile("[\\w.-]+@[\\w.0-9-&_$-]+\\.[a-zA-Z0-9]{2,}");
+        Matcher emailMatcher = validEmail.matcher("test@ex6a-mple.com");
         boolean emailMatches = emailMatcher.matches();
         System.out.println("Matches: " + emailMatches);
 
@@ -26,7 +26,7 @@ public class App {
 
         System.out.println(4);
         //does not work!!
-        Pattern UrlPattern = Pattern.compile("(http:|https:)+[//]+[\\w.]+[A-Za-z0-9.]+[a-z]{3}");
+        Pattern UrlPattern = Pattern.compile("(http:|https:)+[//]+[\\w.]+[A-Za-z0-9_$.]+[a-z]{3}");
         Matcher UrlMatcher = UrlPattern.matcher("http://www.example.com");
         boolean UrlMatches = UrlMatcher.matches();
         System.out.println("Matches: " + UrlMatches);
